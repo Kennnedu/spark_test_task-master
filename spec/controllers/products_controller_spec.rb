@@ -14,7 +14,7 @@ RSpec.describe ProductsController, :type => :controller do
     it { expect(response.content_type).to eq('application/octet-stream') }
 
     it do
-      expect(response.body.split("\n").first).to eq("name,description,price,availability_date,slug,stock_total,category")
+      expect(response.body.split("\n").first).to eq("name;description;price;availability_date;slug;stock_total;category")
     end
 
     it { expect(response.body.split("\n").size).to eq(@default_limit + 1) } # with header

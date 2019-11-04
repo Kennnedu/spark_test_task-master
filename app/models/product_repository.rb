@@ -20,7 +20,7 @@ class ProductRepository < SimpleDelegator
   end
 
   def to_csv
-    CSV.generate do |csv|
+    CSV.generate(:col_sep => ";") do |csv|
       csv << %w(name description price availability_date slug stock_total category)
 
       __getobj__.each do |pr|
